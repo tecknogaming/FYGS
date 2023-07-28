@@ -1,0 +1,35 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=5
+
+[application]
+
+config/name="Five Nights at Fines"
+config/tags=PackedStringArray("fygs")
+config/features=PackedStringArray("4.1", "GL Compatibility")
+run/max_fps=60
+config/icon="res://EPLvVtsWsAEKJIM.jpg"
+
+[autoload]
+
+Devtool="*res://script/devtool.gd"
+CameraSytem="*res://script/CameraSytem.gd"
+AnimatronicMaster="*res://script/animatronicMaster.gd"
+
+[display]
+
+window/stretch/mode="viewport"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+lightmapping/probe_capture/update_speed=25.0
+limits/opengl/max_lights_per_object=32
+lightmapping/bake_quality/low_quality_ray_count=32

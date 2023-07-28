@@ -1,0 +1,1246 @@
+[gd_scene load_steps=27 format=3 uid="uid://b3log4bu5av5j"]
+
+[ext_resource type="Script" path="res://script/map.gd" id="1_5bv63"]
+[ext_resource type="Texture2D" uid="uid://cboor26ln3y5c" path="res://addons/kenney_prototype_tools/textures/dark/texture_13.png" id="1_yl4e6"]
+[ext_resource type="Script" path="res://script/cameras.gd" id="2_harjl"]
+[ext_resource type="Script" path="res://script/UI.gd" id="2_i5xpp"]
+[ext_resource type="Material" uid="uid://c4urka6ybrmhm" path="res://addons/kenney_prototype_tools/materials/dark/material_13.tres" id="2_m3rjy"]
+[ext_resource type="PackedScene" uid="uid://bwddq5x6a4qj6" path="res://assets/FYGS Animatronic.gltf" id="3_afpeg"]
+[ext_resource type="Script" path="res://script/mako.gd" id="3_hmhe2"]
+[ext_resource type="PackedScene" uid="uid://bk45c2ab1k1vf" path="res://assets/FYGS Camera Tablet.gltf" id="4_moyak"]
+[ext_resource type="PackedScene" uid="uid://bj5f1xkl8gpgg" path="res://scene/standard_animatronic_test.tscn" id="8_ve1po"]
+[ext_resource type="Script" path="res://script/pathNode.gd" id="9_f7dtq"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_oe885"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_5qj7y"]
+sky_material = SubResource("ProceduralSkyMaterial_oe885")
+
+[sub_resource type="Environment" id="Environment_bomto"]
+background_mode = 2
+background_energy_multiplier = 0.1
+sky = SubResource("Sky_5qj7y")
+tonemap_mode = 2
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_otcmw"]
+albedo_texture = ExtResource("1_yl4e6")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_be4ar"]
+albedo_color = Color(0.996078, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_p22t4"]
+albedo_color = Color(0, 0.968627, 1, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ixxa6"]
+albedo_color = Color(0.996078, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_kul37"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FYGS Camera Tablet:rotation:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FYGS Camera Tablet:rotation:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FYGS Camera Tablet:rotation:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("../FYGS Camera Tablet:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-17.634, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("../FYGS Camera Tablet:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.25576, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("../FYGS Camera Tablet:position:z")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-19.8493, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_h24vc"]
+resource_name = "camera_close"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FYGS Camera Tablet:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.51114, -0.25, 0, 0.25, 0, 0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FYGS Camera Tablet:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-2.96706, -0.25, 0, 0.25, 0, 0.174533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FYGS Camera Tablet:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(3.14159, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FYGS Camera Tablet:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-17.7951, -0.25, 0, 0.25, 0, -17.634, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FYGS Camera Tablet:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.79278, -0.25, 0, 0.25, 0, 1.25576, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FYGS Camera Tablet:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-20.7634, -0.25, 0, 0.25, 0, -19.8493, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_pqji6"]
+resource_name = "camera_open"
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../FYGS Camera Tablet:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0, -1.51114, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../FYGS Camera Tablet:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0, -2.96706, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../FYGS Camera Tablet:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.14159, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../FYGS Camera Tablet:position:x")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-17.634, -0.25, 0, 0.25, 0, -17.7951, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../FYGS Camera Tablet:position:y")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.25576, -0.25, 0, 0.25, 0, 1.79278, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../FYGS Camera Tablet:position:z")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-19.8493, -0.25, 0, 0.25, 0, -20.7634, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.5)
+}
+
+[sub_resource type="Animation" id="Animation_d22c5"]
+resource_name = "enter_sleep"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0, -0.136758, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0, -0.642769, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.225547, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_hh8nb"]
+resource_name = "exit_sleep"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.136758, -0.25, 0, 0.25, 0, 0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.642769, -0.25, 0, 0.25, 0, 0.174533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.225547, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_jpejp"]
+resource_name = "look_forward"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0, 0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.44862, -0.25, 0, 0.25, 0, 0.174533, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0837758, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_ogdej"]
+resource_name = "look_side"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0, 0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0, 1.44862, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0837758, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s53c6"]
+_data = {
+"RESET": SubResource("Animation_kul37"),
+"camera_close": SubResource("Animation_h24vc"),
+"camera_open": SubResource("Animation_pqji6"),
+"enter_sleep": SubResource("Animation_d22c5"),
+"exit_sleep": SubResource("Animation_hh8nb"),
+"look_forward": SubResource("Animation_jpejp"),
+"look_side": SubResource("Animation_ogdej")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_dqe0h"]
+font_size = 32
+
+[node name="Map Prototype" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_bomto")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+visible = false
+shadow_enabled = true
+
+[node name="map" type="Node3D" parent="."]
+script = ExtResource("1_5bv63")
+
+[node name="CSGBox3D69" type="CSGBox3D" parent="map"]
+transform = Transform3D(75.2249, 0, 0, 0, 1.29014, 0, 0, 0, 59.4102, -4.0932, 0, 5.59494)
+material_override = SubResource("StandardMaterial3D_otcmw")
+
+[node name="cealing" type="CSGBox3D" parent="map"]
+transform = Transform3D(75.225, 0, 0, 0, 0.359, 0, 0, 0, 68.631, -4.03253, 4.15245, 5.71853)
+material_override = ExtResource("2_m3rjy")
+
+[node name="SpotLight3D" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.6757, 3.46817, -6.30703)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.6757, 3.46817, -0.591754)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D7" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.6757, 3.46817, 11.7053)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D8" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -14.6757, 3.46817, 17.4205)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D9" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.897782, 3.46817, 12.8006)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D10" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.897782, 3.46817, 18.5159)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D11" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.897782, 3.46817, -8.10807)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D12" type="SpotLight3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0.897782, 3.46817, -2.39279)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D3" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -8.9446, 3.46817, -14.3687)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D4" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -3.22956, 3.46817, -14.4206)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D17" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, 4.72688, 3.46817, 5.80681)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D18" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, 10.4419, 3.46817, 5.75484)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D19" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -23.2094, 3.46817, 5.80681)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D20" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -17.4944, 3.46817, 5.75484)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D13" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -10.0803, 3.46817, 5.92684)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D14" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -4.36524, 3.46817, 5.87487)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D15" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -10.9144, 3.46817, 27.1304)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D16" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.00909308, -0.999959, -4.37096e-08, 0, -4.37114e-08, 1, -0.999959, 0.00909308, 3.97471e-10, -5.19938, 3.46817, 27.0784)
+light_energy = 0.05
+spot_angle = 86.35
+
+[node name="SpotLight3D5" type="SpotLight3D" parent="map"]
+transform = Transform3D(0.79831, 0.229824, -0.55667, 0.10104, 0.860111, 0.5, 0.59371, -0.455401, 0.663414, -1.30871, 3.71132, -10.0968)
+light_energy = 0.2
+spot_range = 16.0
+spot_attenuation = 0.812252
+spot_angle = 47.42
+spot_angle_attenuation = 2.0
+
+[node name="SpotLight3D6" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.889279, -0.147253, 0.433013, 0.10104, 0.860111, 0.5, -0.446065, 0.488391, -0.75, 4.04646, 3.71132, 0.0171542)
+light_energy = 0.2
+spot_range = 16.0
+spot_attenuation = 0.812252
+spot_angle = 47.42
+spot_angle_attenuation = 2.0
+
+[node name="SpotLight3D22" type="SpotLight3D" parent="map"]
+transform = Transform3D(0.723316, -0.408574, 0.55667, 0.10104, 0.860111, 0.5, -0.683085, -0.305412, 0.663414, 10.8148, 3.71132, 34.2937)
+light_energy = 0.8
+spot_range = 16.0
+spot_attenuation = 0.812252
+spot_angle = 59.58
+spot_angle_attenuation = 2.0
+
+[node name="SpotLight3D23" type="SpotLight3D" parent="map"]
+transform = Transform3D(0.121696, 0.71877, -0.684514, 0.984561, -7.65125e-09, 0.17504, 0.125814, -0.695248, -0.707673, -2.94625, 3.71132, 21.7198)
+light_energy = 0.3
+spot_range = 31.406
+spot_attenuation = 0.812252
+spot_angle = 95.29
+spot_angle_attenuation = 2.0
+
+[node name="SpotLight3D21" type="SpotLight3D" parent="map"]
+transform = Transform3D(-0.711235, 0.413863, -0.568209, 0.10104, 0.860111, 0.5, 0.695655, 0.298206, -0.653558, 11.371, 3.71132, 0.0171542)
+light_energy = 0.2
+spot_range = 10.206
+spot_attenuation = 0.812252
+spot_angle = 59.58
+spot_angle_attenuation = 2.0
+
+[node name="cameras" type="Node3D" parent="map"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.310451, 0)
+script = ExtResource("2_harjl")
+
+[node name="01" type="Camera3D" parent="map/cameras"]
+transform = Transform3D(0.739702, 0.213425, -0.638194, 0, 0.948373, 0.317156, 0.672935, -0.234601, 0.701513, -1.6257, 4.04252, -9.83314)
+fov = 60.0
+
+[node name="02" type="Camera3D" parent="map/cameras"]
+transform = Transform3D(-0.721746, -0.20434, 0.661308, -0.00333503, 0.956444, 0.291896, -0.69215, 0.208469, -0.690991, 4.31485, 4.04252, -0.306625)
+fov = 60.0
+
+[node name="03" type="Camera3D" parent="map/cameras"]
+transform = Transform3D(-0.723668, 0.19947, -0.660694, -0.00333813, 0.956299, 0.292372, 0.69014, 0.213785, -0.691377, 11.0387, 4.04252, -0.306625)
+fov = 60.0
+
+[node name="04" type="Camera3D" parent="map/cameras"]
+transform = Transform3D(0.705354, -0.204997, 0.678566, -0.00333813, 0.956299, 0.292372, -0.708847, -0.208491, 0.673845, 11.066, 4.04252, 34.369)
+fov = 60.0
+
+[node name="05" type="Camera3D" parent="map/cameras"]
+transform = Transform3D(-0.124614, 0.289697, -0.948972, -0.00333813, 0.956299, 0.292372, 0.9922, 0.0396013, -0.118201, -18.1836, 4.04252, 24.5352)
+fov = 60.0
+
+[node name="06" type="Camera3D" parent="map/cameras"]
+transform = Transform3D(0.642002, 0.226212, -0.732572, -0.00333813, 0.956299, 0.292372, 0.766696, -0.185258, 0.614701, -17.754, 4.04252, 11.0688)
+fov = 60.0
+
+[node name="MakosRoom" type="Node3D" parent="map"]
+
+[node name="CSGBox3D87" type="CSGBox3D" parent="map/MakosRoom"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 15.1323, -19.7316, 2.35413, -14.3865)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="map/MakosRoom"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 6.55609, -10.3891, 2.35413, -18.9601)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="map/MakosRoom"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 4.04949, -10.3651, 2.35414, -10.8389)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="map/MakosRoom"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -10.9805, 2.35414, -9.69983)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="map/MakosRoom"]
+transform = Transform3D(-9.79425e-09, 0, -3.7729, 0, 0.956132, 0, 0.224066, 0, -1.64919e-07, -17.9926, 2.35414, -9.69983)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="map/MakosRoom"]
+transform = Transform3D(-9.79425e-09, 0, 11.0215, 0, 0.956132, 0, -0.224066, 0, -4.81767e-07, -15.4599, 2.36943, -21.7943)
+size = Vector3(1, 4.32526, 1.22891)
+
+[node name="AttackRoom1" type="Node3D" parent="map"]
+
+[node name="CSGBox3D11" type="CSGBox3D" parent="map/AttackRoom1"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 13.1582, 3.96676, 2.35413, -15.6515)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D9" type="CSGBox3D" parent="map/AttackRoom1"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 6.55609, -1.75034, 2.35413, -18.9601)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D10" type="CSGBox3D" parent="map/AttackRoom1"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 4.04949, -1.72638, 2.35414, -10.8389)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D12" type="CSGBox3D" parent="map/AttackRoom1"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, 4.59057, 2.35414, -9.69983)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D13" type="CSGBox3D" parent="map/AttackRoom1"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -2.42155, 2.35414, -9.69983)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D14" type="CSGBox3D" parent="map/AttackRoom1"]
+transform = Transform3D(-9.79424e-09, 0, 7.15891, 0, 0.956132, 0, -0.224066, 0, -3.12926e-07, 1.32809, 2.36943, -21.7943)
+size = Vector3(1, 4.32526, 1)
+
+[node name="AttackRoom2" type="Node3D" parent="map"]
+
+[node name="CSGBox3D17" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -10.9805, 2.35414, 1.97836)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D18" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-9.79425e-09, 0, -3.67685, 0, 0.956132, 0, 0.224066, 0, -1.6072e-07, -17.9926, 2.35414, 1.97836)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D23" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -10.9805, 2.35414, 11.3504)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D24" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -17.9926, 2.35414, 11.3504)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D19" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, -17.9078, 2.35414, 9.32476)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D20" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, -17.9069, 2.35414, 2.31264)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D21" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, -11.3693, 2.35414, 9.32476)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D22" type="CSGBox3D" parent="map/AttackRoom2"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, -11.3685, 2.35414, 2.31264)
+size = Vector3(1, 4.32526, 1)
+
+[node name="SafeRoom" type="Node3D" parent="map"]
+
+[node name="CSGBox3D29" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(0.269462, 0, 0, 0, 0.956132, 0, 0, 0, 5.48025, -2.48017, 2.35414, 1.63242)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D57" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, 4.52752, 2.35414, 11.3504)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D58" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -2.48461, 2.35414, 11.3504)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D30" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, -2.56503, 2.35414, 9.32476)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D40" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(0.269462, 0, 0, 0, 0.956132, 0, 0, 0, 5.48025, 4.56191, 2.35414, 1.63242)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D41" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, 4.47705, 2.35414, 9.32476)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D38" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, 4.59057, 2.35414, -0.494559)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D39" type="CSGBox3D" parent="map/SafeRoom"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -2.42155, 2.35414, -0.494559)
+size = Vector3(1, 4.32526, 1)
+
+[node name="FinesRoom" type="Node3D" parent="map"]
+
+[node name="CSGBox3D46" type="CSGBox3D" parent="map/FinesRoom"]
+transform = Transform3D(-0.224124, 0, 0.00179816, 0, 0.956132, 0, -2.73785e-05, 0, -14.72, 16.0042, 2.35413, 6.00329)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D44" type="CSGBox3D" parent="map/FinesRoom"]
+transform = Transform3D(0.269462, 0, 0, 0, 0.956132, 0, 0, 0, 5.48025, 10.7941, 2.35414, 1.63242)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D45" type="CSGBox3D" parent="map/FinesRoom"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, 10.7093, 2.35414, 9.32476)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D47" type="CSGBox3D" parent="map/FinesRoom"]
+transform = Transform3D(-9.79425e-09, 0, -5.72894, 0, 0.956132, 0, 0.224066, 0, -2.5042e-07, 13.4098, 2.35414, -0.494559)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D48" type="CSGBox3D" parent="map/FinesRoom"]
+transform = Transform3D(-9.79425e-09, 0, -5.72894, 0, 0.956132, 0, 0.224066, 0, -2.5042e-07, 13.4098, 2.35414, 11.2952)
+size = Vector3(1, 4.32526, 1)
+
+[node name="FlorbsRoom" type="Node3D" parent="map"]
+
+[node name="CSGBox3D51" type="CSGBox3D" parent="map/FlorbsRoom"]
+transform = Transform3D(-9.79425e-09, 0, -2.88252, 0, 0.956132, 0, 0.224066, 0, -1.25999e-07, -11.7236, 2.35414, 17.7197)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D52" type="CSGBox3D" parent="map/FlorbsRoom"]
+transform = Transform3D(-9.79425e-09, 0, -2.88252, 0, 0.956132, 0, 0.224066, 0, -1.25999e-07, -17.4725, 2.35414, 17.7197)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D56" type="CSGBox3D" parent="map/FlorbsRoom"]
+transform = Transform3D(-9.79425e-09, 0, -8.01252, 0, 0.956132, 0, 0.224066, 0, -3.50238e-07, -14.6791, 2.35414, 31.8005)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D53" type="CSGBox3D" parent="map/FlorbsRoom"]
+transform = Transform3D(-0.224124, 0, 0.00179816, 0, 0.956132, 0, -2.73785e-05, 0, -14.72, -18.4696, 2.35413, 24.6774)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D54" type="CSGBox3D" parent="map/FlorbsRoom"]
+transform = Transform3D(0.269462, 0, 0, 0, 0.956132, 0, 0, 0, 7.75388, -11.0643, 2.35414, 21.5637)
+size = Vector3(1, 4.32526, 1.03785)
+
+[node name="CSGBox3D55" type="CSGBox3D" parent="map/FlorbsRoom"]
+transform = Transform3D(-0.224066, 0, 0.000507773, 0, 0.956132, 0, -2.73714e-05, 0, -4.1567, -11.1492, 2.35414, 30.0594)
+size = Vector3(1, 4.32526, 1)
+
+[node name="ExtraRooms" type="Node3D" parent="map"]
+
+[node name="CSGBox3D68" type="CSGBox3D" parent="map/ExtraRooms"]
+transform = Transform3D(-9.79425e-09, 0, -16.517, 0, 0.956132, 0, 0.224066, 0, -7.21982e-07, 3.29436, 2.35414, 34.7315)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D62" type="CSGBox3D" parent="map/ExtraRooms"]
+transform = Transform3D(-9.79425e-09, 0, -4.1567, 0, 0.956132, 0, 0.224066, 0, -1.81695e-07, -2.37044, 2.35414, 20.4047)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D67" type="CSGBox3D" parent="map/ExtraRooms"]
+transform = Transform3D(-0.224124, 0, 0.00179816, 0, 0.956132, 0, -2.73785e-05, 0, -14.72, 11.4649, 2.35413, 27.6123)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D65" type="CSGBox3D" parent="map/ExtraRooms"]
+transform = Transform3D(0.269462, 0, 0, 0, 0.956132, 0, 0, 0, 7.75388, -4.25478, 2.35414, 21.5637)
+size = Vector3(1, 4.32526, 1.03785)
+
+[node name="CSGBox3D66" type="CSGBox3D" parent="map/ExtraRooms"]
+transform = Transform3D(-0.224097, 0, 0.00110153, 0, 0.956132, 0, -2.73752e-05, 0, -9.01729, -4.33963, 2.35414, 32.5646)
+size = Vector3(1, 4.32526, 1)
+
+[node name="ExtraRooms2" type="Node3D" parent="map"]
+
+[node name="CSGBox3D35" type="CSGBox3D" parent="map/ExtraRooms2"]
+transform = Transform3D(-9.79425e-09, 0, -5.52786, 0, 0.956132, 0, 0.224066, 0, -2.41631e-07, -25.4478, 2.35414, 11.3504)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D36" type="CSGBox3D" parent="map/ExtraRooms2"]
+transform = Transform3D(-9.79425e-09, 0, -5.52786, 0, 0.956132, 0, 0.224066, 0, -2.41631e-07, -25.4478, 2.35414, -0.369216)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D33" type="CSGBox3D" parent="map/ExtraRooms2"]
+transform = Transform3D(-0.224072, 0, 0.000621084, 0, 0.956132, 0, -2.73722e-05, 0, -5.08428, -23.0384, 2.35413, 9.97897)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D37" type="CSGBox3D" parent="map/ExtraRooms2"]
+transform = Transform3D(-0.224124, 0, 0.00179816, 0, 0.956132, 0, -2.73785e-05, 0, -14.72, -27.6764, 2.35413, 6.00329)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D34" type="CSGBox3D" parent="map/ExtraRooms2"]
+transform = Transform3D(-0.224072, 0, 0.000621084, 0, 0.956132, 0, -2.73722e-05, 0, -5.08428, -23.0375, 2.35413, 1.40208)
+size = Vector3(1, 4.32526, 1)
+
+[node name="Hallways" type="Node3D" parent="map"]
+
+[node name="CSGBox3D7" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -8.64039, 0, 0.956132, 0, 0.224066, 0, -3.77684e-07, -6.07819, 2.35413, -16.081)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D8" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -8.64039, 0, 0.956132, 0, 0.224066, 0, -3.77684e-07, -6.07819, 2.35413, -12.3949)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D25" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -8.76971, 0, 0.956132, 0, 0.224066, 0, -3.83336e-07, -6.87882, 2.35413, 3.86584)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D26" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -8.76971, 0, 0.956132, 0, 0.224066, 0, -3.83336e-07, -6.87882, 2.35413, 7.55199)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D63" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -6.86766, 0, 0.956132, 0, 0.224066, 0, -3.00195e-07, -7.68312, 2.35413, 24.9413)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D64" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -6.86766, 0, 0.956132, 0, 0.224066, 0, -3.00195e-07, -7.68312, 2.35413, 28.6275)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D42" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -6.2105, 0, 0.956132, 0, 0.224066, 0, -2.7147e-07, 7.73763, 2.35413, 3.86584)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D43" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -6.2105, 0, 0.956132, 0, 0.224066, 0, -2.7147e-07, 7.64355, 2.35413, 7.55199)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D31" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -5.02248, 0, 0.956132, 0, 0.224066, 0, -2.1954e-07, -20.535, 2.35413, 3.86584)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D32" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -5.02248, 0, 0.956132, 0, 0.224066, 0, -2.1954e-07, -20.535, 2.35413, 7.55199)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D15" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 11.6712, -16.4531, 2.35413, -3.81969)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D16" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 11.6712, -12.7673, 2.35413, -3.88747)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D49" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 6.36116, -16.4515, 2.35413, 14.621)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D50" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 6.36116, -12.7657, 2.35413, 14.584)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D27" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 9.07847, -0.712746, 2.35413, -5.1198)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D28" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 9.07847, 2.97306, 2.35413, -5.17252)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D59" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 9.07847, -0.712746, 2.35413, 16.0389)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D60" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(0.224066, 0, 0, 0, 0.956132, 0, 0, 0, 9.07847, 2.97306, 2.35413, 15.9862)
+size = Vector3(1, 4.32526, 1)
+
+[node name="CSGBox3D61" type="CSGBox3D" parent="map/Hallways"]
+transform = Transform3D(-9.79425e-09, 0, -9.27405, 0, 0.956132, 0, 0.224066, 0, -4.05382e-07, 7.27731, 2.35414, 20.4047)
+size = Vector3(1, 4.32526, 1)
+
+[node name="DevMarkers" type="Node3D" parent="map"]
+
+[node name="Label3D" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, -14.5644, 4.34162, -14.402)
+text = "Mako's Room"
+font_size = 128
+
+[node name="Label3D2" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 1.00981, 4.34162, -14.4419)
+text = "Attack Room 1
+"
+font_size = 128
+
+[node name="Label3D3" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, -14.7035, 4.34162, 6.01298)
+text = "Attack Room 2
+"
+font_size = 128
+
+[node name="Label3D4" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 1.073, 4.34162, 6.01297)
+text = "Safe Room
+"
+font_size = 128
+
+[node name="Label3D5" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 13.3293, 4.34162, 6.01297)
+text = "Fine's Room
+"
+font_size = 128
+
+[node name="Label3D6" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 3.83075, 4.34162, 27.7263)
+text = "XTL's Room
+"
+font_size = 128
+
+[node name="Label3D11" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, 3.83075, 4.34162, 28.2604)
+text = "Storage Room
+"
+font_size = 64
+
+[node name="Label3D7" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, -14.7801, 4.34162, 24.7748)
+text = "Florb's Room
+"
+font_size = 128
+
+[node name="Label3D10" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, -14.7801, 4.34162, 25.3623)
+text = "Entrance Room
+"
+font_size = 64
+
+[node name="Label3D9" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, -27.3645, 4.34162, 24.7748)
+text = "FUCK YOU
+FLORB"
+font_size = 640
+
+[node name="Label3D8" type="Label3D" parent="map/DevMarkers"]
+transform = Transform3D(-1, 8.74228e-08, 0, 3.82137e-15, 4.37114e-08, 1, 8.74228e-08, 1, -4.37114e-08, -24.9623, 4.34162, 4.82082)
+text = "Generator Room
+"
+font_size = 128
+
+[node name="CSGBox3D71" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, -0.836597, 4.42001, -10.7191)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D72" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, 11.6478, 4.42001, 0.341188)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D78" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, 15.9619, 4.42001, 5.83296)
+material = SubResource("StandardMaterial3D_p22t4")
+
+[node name="CSGBox3D79" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, -15.2363, 4.42001, 30.6233)
+material = SubResource("StandardMaterial3D_p22t4")
+
+[node name="CSGBox3D81" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, 10.5305, 4.42001, 27.5941)
+material = SubResource("StandardMaterial3D_p22t4")
+
+[node name="CSGBox3D80" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, -11.2585, 4.42001, -20.6812)
+material = SubResource("StandardMaterial3D_p22t4")
+
+[node name="CSGBox3D73" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, 10.4566, 4.43257, 33.6794)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D74" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, 3.59274, 4.43257, 0.415933)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D75" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, -17.6563, 4.43257, 24.57)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D76" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, -17.163, 4.43257, 10.4227)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D77" type="CSGBox3D" parent="map/DevMarkers"]
+transform = Transform3D(1, 0, 0, 0, 0.224802, 0, 0, 0, 1, -26.78, 4.43257, 5.74131)
+material = SubResource("StandardMaterial3D_be4ar")
+
+[node name="CSGBox3D81" type="CSGBox3D" parent="map/DevMarkers/CSGBox3D77"]
+transform = Transform3D(0.466136, 0, 0, 0, 1.37884, 0, 0, 0, 0.483829, 0, 0, 0)
+material = SubResource("StandardMaterial3D_ixxa6")
+
+[node name="mako" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.8434, 0.637127, -21.0009)
+script = ExtResource("3_hmhe2")
+
+[node name="Camera3D" type="Camera3D" parent="mako"]
+transform = Transform3D(0.984808, 0.00606024, 0.173542, 0, 0.999391, -0.0348995, -0.173648, 0.0343693, 0.984208, 0, 1.15422, 0)
+current = true
+fov = 59.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mako"]
+libraries = {
+"": SubResource("AnimationLibrary_s53c6")
+}
+
+[node name="flashlight" type="SpotLight3D" parent="mako"]
+transform = Transform3D(0.000558452, 0, 1, 0, 1, 0, -1, 0, 0.000558452, -0.272547, 0.673496, -0.184023)
+visible = false
+light_energy = 2.0
+shadow_enabled = true
+spot_range = 11.735
+spot_attenuation = 0.210224
+spot_angle = 26.54
+spot_angle_attenuation = 1.68179
+
+[node name="CanvasLayer" type="CanvasLayer" parent="mako"]
+
+[node name="UI" type="Control" parent="mako/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("2_i5xpp")
+
+[node name="fps counter" type="Label" parent="mako/CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.0451389
+anchor_right = -0.0451389
+offset_left = 1097.0
+offset_right = 1152.0
+offset_bottom = 48.0
+text = "FPS"
+label_settings = SubResource("LabelSettings_dqe0h")
+horizontal_alignment = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="area left" type="ColorRect" parent="mako/CanvasLayer/UI"]
+layout_mode = 0
+offset_right = 143.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.054902)
+
+[node name="area right" type="ColorRect" parent="mako/CanvasLayer/UI"]
+visible = false
+layout_mode = 0
+offset_left = 1009.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.054902)
+
+[node name="area middle" type="ColorRect" parent="mako/CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -174.0
+offset_right = 336.0
+offset_bottom = 180.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.054902)
+
+[node name="area top" type="ColorRect" parent="mako/CanvasLayer/UI"]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = -325.0
+offset_right = 341.0
+offset_bottom = -225.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.054902)
+
+[node name="area bottom 1" type="ColorRect" parent="mako/CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -329.0
+offset_top = 223.0
+offset_right = -14.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.054902)
+
+[node name="area bottom 2" type="ColorRect" parent="mako/CanvasLayer/UI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 19.0
+offset_top = 223.0
+offset_right = 334.0
+offset_bottom = 323.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(1, 1, 1, 0.054902)
+
+[node name="FYGS Animatronic3" parent="." instance=ExtResource("3_afpeg")]
+transform = Transform3D(-0.287996, 0.0460789, 0.956522, 0, 0.998842, -0.0481176, -0.957632, -0.0138577, -0.287662, -11.2208, -0.0835058, -20.8208)
+
+[node name="chest" parent="FYGS Animatronic3/Node2/root" index="0"]
+transform = Transform3D(1, 7.45058e-09, 0, 9.31323e-10, 0.930283, -0.366842, 0, 0.366842, 0.930283, 1.90735e-06, 0.6875, -4.76837e-07)
+
+[node name="torso" parent="FYGS Animatronic3/Node2/root/chest" index="1"]
+transform = Transform3D(0.990507, -0.136213, 0.0184869, 0.128146, 0.963658, 0.234398, -0.0497431, -0.229804, 0.971965, 1.90735e-06, 0.124999, 2.38419e-06)
+
+[node name="arms" parent="FYGS Animatronic3/Node2/root/chest/torso" index="13"]
+transform = Transform3D(1, 1.49012e-08, -1.19209e-07, 0, 1, 6.51926e-08, -1.19209e-07, -5.02914e-08, 1, 0, 0.8125, 4.76837e-07)
+
+[node name="arm_left" parent="FYGS Animatronic3/Node2/root/chest/torso/arms" index="0"]
+transform = Transform3D(0.987505, 0.157225, -0.0107075, -0.157589, 0.985223, -0.0670967, 0, 0.0679456, 0.997689, -0.312506, 2.38419e-07, -2.38419e-06)
+
+[node name="left_elbow" parent="FYGS Animatronic3/Node2/root/chest/torso/arms/arm_left" index="2"]
+transform = Transform3D(1, 1.49012e-08, 5.96046e-08, 0, 0.964879, -0.262694, -2.98023e-08, 0.262694, 0.964879, -0.125, -0.375, 9.53674e-07)
+
+[node name="left_hand" parent="FYGS Animatronic3/Node2/root/chest/torso/arms/arm_left/left_elbow" index="1"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 0.853551, -0.52101, -1.49012e-08, 0.52101, 0.853551, 0, -0.375, 0)
+
+[node name="arm_right" parent="FYGS Animatronic3/Node2/root/chest/torso/arms" index="1"]
+transform = Transform3D(1, 0, 0, 0, 0.920641, 0.39041, 0, -0.39041, 0.920641, 0.312498, 0, -1.43051e-06)
+
+[node name="right_elbow" parent="FYGS Animatronic3/Node2/root/chest/torso/arms/arm_right" index="2"]
+transform = Transform3D(1, 0, -2.98023e-08, 0, 0.976179, -0.216968, 1.49012e-08, 0.216968, 0.976179, 0.125, -0.375, 4.76837e-07)
+
+[node name="right_hand" parent="FYGS Animatronic3/Node2/root/chest/torso/arms/arm_right/right_elbow" index="1"]
+transform = Transform3D(1, -1.49012e-08, 0, -7.45058e-09, 0.98149, -0.191511, -2.98023e-08, 0.191511, 0.98149, 0, -0.375, 4.76837e-07)
+
+[node name="head" parent="FYGS Animatronic3/Node2/root/chest/torso" index="14"]
+transform = Transform3D(0.929866, -0.354845, 0.0971278, 0.367897, 0.896875, -0.245492, 0, 0.264008, 0.964521, 0, 1, 1.90735e-06)
+
+[node name="jaw" parent="FYGS Animatronic3/Node2/root/chest/torso/head" index="2"]
+transform = Transform3D(1, 2.98023e-08, -2.98023e-08, 0, 0.91965, 0.392738, 0, -0.392738, 0.91965, 1.90735e-06, 0.0625, -0.125001)
+
+[node name="legs" parent="FYGS Animatronic3/Node2/root" index="1"]
+transform = Transform3D(1, 0, 9.31323e-10, 0, 0.0480129, -0.998847, -2.98023e-08, 0.998847, 0.0480129, 0, 0.6875, 0)
+
+[node name="left_leg" parent="FYGS Animatronic3/Node2/root/legs" index="0"]
+transform = Transform3D(1, 0, 1.49012e-08, 0, 0.629673, -0.776861, -9.24047e-10, 0.77686, 0.629673, -0.1875, -1.43051e-06, 3.57628e-07)
+
+[node name="left_knee" parent="FYGS Animatronic3/Node2/root/legs/left_leg" index="1"]
+transform = Transform3D(0.999999, -1.04308e-07, -7.45058e-08, 2.98023e-08, -0.235821, 0.971796, 0, -0.971797, -0.235821, 1.90735e-06, -0.374997, 0)
+
+[node name="left_foot" parent="FYGS Animatronic3/Node2/root/legs/left_leg/left_knee" index="1"]
+transform = Transform3D(1, -2.79397e-09, 0, 0, 0.775022, 0.631935, 0, -0.631935, 0.775022, 0, -0.374999, 9.53674e-07)
+
+[node name="right_leg" parent="FYGS Animatronic3/Node2/root/legs" index="1"]
+transform = Transform3D(0.977061, -0.0585615, -0.204752, 0.0598291, 0.998209, 0, 0.204386, -0.0122501, 0.978814, 0.1875, 0, 0)
+
+[node name="right_knee" parent="FYGS Animatronic3/Node2/root/legs/right_leg" index="1"]
+transform = Transform3D(0.990068, 0, -0.14059, -1.49012e-08, 1, 0, 0.14059, 3.72529e-09, 0.990068, 1.90735e-06, -0.375, -4.76837e-07)
+
+[node name="right_foot" parent="FYGS Animatronic3/Node2/root/legs/right_leg/right_knee" index="1"]
+transform = Transform3D(0.966039, 8.9407e-08, -0.258397, 0.0918979, 0.934621, 0.343567, 0.241504, -0.355645, 0.90288, 0, -0.375, 0)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.995752, 0, -0.0920752, 0.0918233, -0.0739171, 0.993028, -0.00680593, -0.997264, -0.0736031, -14.5871, 6.00303, -13.3139)
+light_energy = 0.6
+light_indirect_energy = 0.0
+light_volumetric_fog_energy = 0.0
+light_specular = 0.0
+shadow_enabled = true
+spot_range = 12.5
+spot_attenuation = 1.07177
+spot_angle = 87.67
+spot_angle_attenuation = 1.36604
+
+[node name="SpotLight3D2" type="SpotLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, -5.09153, 39.163, 7.05585)
+light_energy = 16.0
+shadow_enabled = true
+editor_only = true
+spot_range = 116.361
+spot_angle = 88.78
+
+[node name="FYGS Camera Tablet" parent="." instance=ExtResource("4_moyak")]
+transform = Transform3D(0.984808, 0.00606024, 0.173542, 0, 0.999391, -0.0348995, -0.173648, 0.0343693, 0.984208, -17.634, 1.25576, -19.8493)
+
+[node name="StandardAnimatronicTest" parent="." instance=ExtResource("8_ve1po")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.47035, 0, -1.23147)
+
+[node name="test1" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.66693, 1.82598, 0)
+script = ExtResource("9_f7dtq")
+
+[node name="test2" type="Node3D" parent="test1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -3.70312)
+script = ExtResource("9_f7dtq")
+
+[node name="test3" type="Node3D" parent="test1/test2"]
+script = ExtResource("9_f7dtq")
+
+[editable path="FYGS Animatronic3"]

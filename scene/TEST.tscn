@@ -1,0 +1,368 @@
+[gd_scene load_steps=17 format=3 uid="uid://dj3x1skg16osr"]
+
+[ext_resource type="Material" uid="uid://d2lsaquvqq6mi" path="res://addons/kenney_prototype_tools/materials/green/material_10.tres" id="1_56fl6"]
+[ext_resource type="Script" path="res://forward screen test.gd" id="2_mn7ep"]
+[ext_resource type="Material" uid="uid://c4m3pqbl84uhl" path="res://addons/kenney_prototype_tools/materials/purple/material_02.tres" id="2_ul3t0"]
+[ext_resource type="Material" uid="uid://bx6qeabdhq2s" path="res://addons/kenney_prototype_tools/materials/dark/material_01.tres" id="3_xi3bc"]
+[ext_resource type="PackedScene" uid="uid://bwddq5x6a4qj6" path="res://FYGS Animatronic.gltf" id="5_huptw"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_rs3pg"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_o8vmu"]
+sky_material = SubResource("ProceduralSkyMaterial_rs3pg")
+
+[sub_resource type="Environment" id="Environment_7gx4y"]
+background_mode = 2
+sky = SubResource("Sky_o8vmu")
+tonemap_mode = 2
+
+[sub_resource type="LabelSettings" id="LabelSettings_qa5hb"]
+font_size = 60
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vdre2"]
+font_size = 40
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Animation" id="Animation_4oumr"]
+length = 0.5
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_3pu4j"]
+resource_name = "camera_rotate_left"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1.0472, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_micth"]
+resource_name = "camera_rotate_left_back"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.0472, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_syhfs"]
+resource_name = "camera_rotate_right"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -1.0472, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, -0.0349066, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="Animation" id="Animation_jrlwl"]
+resource_name = "camera_rotate_right_back"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera3D:rotation:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera3D:rotation:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-1.0472, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Camera3D:rotation:z")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-0.0349066, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_10bra"]
+_data = {
+"RESET": SubResource("Animation_4oumr"),
+"camera_rotate_left": SubResource("Animation_3pu4j"),
+"camera_rotate_left_back": SubResource("Animation_micth"),
+"camera_rotate_right": SubResource("Animation_syhfs"),
+"camera_rotate_right_back": SubResource("Animation_jrlwl")
+}
+
+[node name="TEST" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7gx4y")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866025, -0.433013, 0.25, 0, 0.5, 0.866025, -0.5, 0.75, -0.433013, 0, 0, 0)
+shadow_enabled = true
+
+[node name="world" type="Node3D" parent="."]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="world"]
+transform = Transform3D(31.8718, 0, 0, 0, 0.288903, 0, 0, 0, 28.0525, 0, 0, 0)
+material_override = ExtResource("1_56fl6")
+
+[node name="Label3D" type="Label3D" parent="world"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.862475, -4.27916)
+text = "FORWARD"
+
+[node name="Label3D2" type="Label3D" parent="world"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.63032, 0.77836, 0)
+text = "LEFT"
+
+[node name="Label3D3" type="Label3D" parent="world"]
+transform = Transform3D(-4.37114e-08, 0, -1, 0, 1, 0, 1, 0, -4.37114e-08, 4.05788, 0.77836, 0)
+text = "RIGHT"
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="world"]
+transform = Transform3D(0.49701, 0, 0, 0, 1, 0, 0, 0, 0.511946, 2.04265, 0.573914, -2.97409)
+material_override = ExtResource("2_ul3t0")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="world"]
+transform = Transform3D(0.49701, 0, 0, 0, 1, 0, 0, 0, 0.511946, -2.34296, 0.573914, -2.97409)
+material_override = ExtResource("3_xi3bc")
+
+[node name="mako" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="mako"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.08895, 0)
+top_level = true
+current = true
+
+[node name="CanvasLayer" type="CanvasLayer" parent="mako"]
+
+[node name="forward screen" type="Control" parent="mako/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_mn7ep")
+
+[node name="area left" type="ColorRect" parent="mako/CanvasLayer/forward screen"]
+layout_mode = 0
+offset_right = 161.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.117647)
+
+[node name="Label" type="Label" parent="mako/CanvasLayer/forward screen/area left"]
+layout_mode = 0
+offset_left = 9.0
+offset_top = 257.0
+offset_right = 150.0
+offset_bottom = 348.0
+text = "LEFT"
+label_settings = SubResource("LabelSettings_qa5hb")
+horizontal_alignment = 1
+
+[node name="area right" type="ColorRect" parent="mako/CanvasLayer/forward screen"]
+layout_mode = 0
+offset_left = 991.0
+offset_right = 1152.0
+offset_bottom = 648.0
+color = Color(1, 1, 1, 0.117647)
+
+[node name="Label2" type="Label" parent="mako/CanvasLayer/forward screen/area right"]
+layout_mode = 0
+offset_left = -12.0
+offset_top = 284.0
+offset_right = 179.0
+offset_bottom = 375.0
+text = "RIGHT"
+label_settings = SubResource("LabelSettings_vdre2")
+horizontal_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="mako"]
+libraries = {
+"": SubResource("AnimationLibrary_10bra")
+}
+
+[node name="FYGS Animatronic" parent="." instance=ExtResource("5_huptw")]
+transform = Transform3D(-0.991438, 0, -0.130578, 0, 1, 0, 0.130578, 0, -0.991438, -0.259574, 0.0067966, -5.65815)
+
+[node name="suit" parent="FYGS Animatronic/Node2/root/chest/torso/arms/arm_left/left_elbow/left_hand" index="1"]
+visible = false
+
+[node name="suit2" parent="FYGS Animatronic/Node2/root/chest/torso/arms/arm_left/left_elbow" index="2"]
+visible = false
+
+[node name="suit3" parent="FYGS Animatronic/Node2/root/chest/torso/arms/arm_left" index="3"]
+visible = false
+
+[node name="suit4" parent="FYGS Animatronic/Node2/root/chest/torso/arms/arm_right/right_elbow/right_hand" index="1"]
+visible = false
+
+[node name="suit5" parent="FYGS Animatronic/Node2/root/chest/torso/arms/arm_right/right_elbow" index="2"]
+visible = false
+
+[node name="suit6" parent="FYGS Animatronic/Node2/root/chest/torso/arms/arm_right" index="3"]
+visible = false
+
+[node name="suit7" parent="FYGS Animatronic/Node2/root/chest/torso/head/jaw" index="1"]
+visible = false
+
+[node name="suit8" parent="FYGS Animatronic/Node2/root/chest/torso/head" index="3"]
+visible = false
+
+[node name="suit9" parent="FYGS Animatronic/Node2/root/chest/torso/head" index="4"]
+visible = false
+
+[node name="suit10" parent="FYGS Animatronic/Node2/root/chest/torso/head" index="5"]
+visible = false
+
+[node name="fine_tail_group" parent="FYGS Animatronic/Node2/root/chest/torso" index="15"]
+visible = false
+
+[node name="suit11" parent="FYGS Animatronic/Node2/root/chest/torso" index="16"]
+visible = false
+
+[node name="suit12" parent="FYGS Animatronic/Node2/root/chest" index="2"]
+visible = false
+
+[node name="suit14" parent="FYGS Animatronic/Node2/root/legs/left_leg/left_knee" index="2"]
+visible = false
+
+[node name="suit15" parent="FYGS Animatronic/Node2/root/legs/left_leg" index="2"]
+visible = false
+
+[node name="suit16" parent="FYGS Animatronic/Node2/root/legs/right_leg/right_knee/right_foot" index="1"]
+visible = false
+
+[node name="suit17" parent="FYGS Animatronic/Node2/root/legs/right_leg/right_knee" index="2"]
+visible = false
+
+[node name="suit18" parent="FYGS Animatronic/Node2/root/legs/right_leg" index="2"]
+visible = false
+
+[editable path="FYGS Animatronic"]
