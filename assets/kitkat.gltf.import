@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bwddq5x6a4qj6"
-path="res://.godot/imported/FYGS Animatronic.gltf-4318f17f5fd3d69dd457b86e47a1740e.scn"
+uid="uid://x53e8sp3be46"
+path="res://.godot/imported/kitkat.gltf-03c109ef3ebafb0fd89854968e67854f.scn"
 
 [deps]
 
-source_file="res://assets/FYGS Animatronic.gltf"
-dest_files=["res://.godot/imported/FYGS Animatronic.gltf-4318f17f5fd3d69dd457b86e47a1740e.scn"]
+source_file="res://assets/kitkat.gltf"
+dest_files=["res://.godot/imported/kitkat.gltf-03c109ef3ebafb0fd89854968e67854f.scn"]
 
 [params]
 
@@ -17,12 +17,12 @@ nodes/root_type="Node3D"
 nodes/root_name="Scene Root"
 nodes/apply_root_scale=false
 nodes/root_scale=1.0
-meshes/ensure_tangents=true
+meshes/ensure_tangents=false
 meshes/generate_lods=false
 meshes/create_shadow_meshes=false
 meshes/light_baking=1
 meshes/lightmap_texel_size=0.2
-skins/use_named_skins=true
+skins/use_named_skins=false
 animation/import=false
 animation/fps=30
 animation/trimming=false

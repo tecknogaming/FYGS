@@ -6,10 +6,12 @@ signal cam_close
 @export var isBlocked := false
 
 var main_camera: Camera3D
+var used_camera: Camera3D
 # format: [ID] : [NODE]
 var starting_cam = "02"
 var curr_cam_num = "02"
 var registered_cameras = {}
+var registerd_camera_locations = []
 var current_camera: Camera3D = null
 
 func _ready():

@@ -1,0 +1,20 @@
+NOTES:
+	- make it so lights only activate when the camera is on
+	- add a save manager to sav progress current nights and endings
+	- complete map building
+	- iron out all the bugs with path finding
+	- figure out how tf to connect the vents to the path finder
+	- probably will script path finding all together
+	- finish loading screen
+	- create title screen
+
+Save Data Structure:
+	[(VERSION NUMBER)]
+	
+	(DATA KEY)=(DATA)
+
+Save Data Contents:
+	- Version Number
+	- Nights Count
+	- Endings Count
+	- Trophy Count

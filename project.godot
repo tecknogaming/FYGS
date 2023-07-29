@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Five Nights at Fines"
+config/name="CMD"
 config/tags=PackedStringArray("fygs")
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
@@ -18,6 +18,7 @@ config/icon="res://EPLvVtsWsAEKJIM.jpg"
 
 [autoload]
 
+SaveManager="*res://script/saveManager.gd"
 Devtool="*res://script/devtool.gd"
 CameraSytem="*res://script/CameraSytem.gd"
 AnimatronicMaster="*res://script/animatronicMaster.gd"
@@ -25,6 +26,10 @@ AnimatronicMaster="*res://script/animatronicMaster.gd"
 [display]
 
 window/stretch/mode="viewport"
+
+[global]
+
+build_version="1"
 
 [rendering]
 

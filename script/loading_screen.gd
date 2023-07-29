@@ -11,7 +11,7 @@ func _ready():
 	$ColorRect.color = Color(0, 0, 0, 255)
 	loadingIcon.play("default")
 	await get_tree().create_timer(2).timeout
-	open()
+	close()
 
 func open():
 	animPlay.play("in")
