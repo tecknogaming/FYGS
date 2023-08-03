@@ -1,12 +1,10 @@
 extends CharacterBody3D
 
 @export var move_interval := 3
-@export var move_chance := 10
+@export var move_chance := 2
 @export var move_speed_level := 1
-@export var valid_moves := {}
 @export var activation_delay := 5
 var currentNode = "start"
-var list_of_current_potential_moves = []
 
 var MoveSpeeds = {
 	1: {
@@ -40,6 +38,14 @@ func _can_move():
 	
 	if isTrue:
 		print("yes")
-	else:
-		print("no")
+		var path = _request_path()
+		_follow_path(path[0], path[1])
 
+func _request_path():
+	var next_available = AnimatronicMaster.find_next_available_paths(name, currentNode)
+	var chosen_path = next_available[(randi() % next_available.size())]
+	var fetched_path = AnimatronicMaster.request_path(name, currentNode, chosen_path)
+	return [chosen_path, fetched_path]
+
+func _follow_path(chosenPathName, pathCoords):
+	pass

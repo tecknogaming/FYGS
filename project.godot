@@ -12,6 +12,7 @@ config_version=5
 
 config/name="CMD"
 config/tags=PackedStringArray("fygs")
+run/main_scene="res://scene/map_prototype.tscn"
 config/features=PackedStringArray("4.1", "GL Compatibility")
 run/max_fps=60
 config/icon="res://EPLvVtsWsAEKJIM.jpg"

@@ -40,8 +40,10 @@ func get_data_from_file():
 			continue
 		var splited_data = dat.split("=")
 		SAVE_DATA[splited_data[0]] = splited_data[1]
+	svFile.close()
 
 func _load_default_data():
 	var default_string = FileAccess.open(DEFAULT_SAVE_FILE, FileAccess.READ).get_as_text()
 	var default = JSON.parse_string(default_string)
 	SAVE_DATA = default
+	default_string.close()
