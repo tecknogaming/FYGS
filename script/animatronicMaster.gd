@@ -1,5 +1,7 @@
 extends Node
 
+# A script that stores and distributes the path's for all of the roaming animatronics
+
 const ANIMATRONIC_PATH_DATA = { # stores the path's of wich the animatronics will travel
 	"test": {
 		"start": ["test1"] 
@@ -10,12 +12,19 @@ const ANIMATRONIC_PATH_DATA = { # stores the path's of wich the animatronics wil
 	"animtronic_xtl": {}
 }
 var path_node_data = {} # used to store runtime data of the PathNode's
+var vent_path_nodes = {} # used to store runtime data of the ventilation PathNode's
+var tp_path_nodes = {} # used to store runtime data of the teleportation PathNode's
 
 
 # Register command used to register PathNodes of the animatronics
 # Params: NodeName[STRING], Node[NODE3D/PATHNODE]
-func register_path_node(nodeName: String, node: PathNode):
-	_produce_path_node_data(nodeName, node)
+func register_path_node(nodeName: String, node: PathNode, PathNodeType: int):
+	if PathNodeType == 0: # Creates Data for Normal PathNodes
+		_produce_normal_path_node_data(nodeName, node)
+	elif PathNodeType == 1: # Creates Data for Ventilation PathNodes
+		_produce_vent_path_node_data(nodeName, node)
+	elif PathNodeType == 2: # Creates Data for Teleportation PathNodes
+		_produce_teleportation_path_node_data(nodeName, node)
 
 # Finds the avilable paths of wich the animatronics can travel
 # Params: AnimatronicName[STRING], CurrentHousingNode[STRING]
@@ -80,7 +89,7 @@ func _get_node_coords(nodepath: String):
 
 # Used to produce path node data to store
 # Params: NodeName[STRING], Node[NODE3D/PATHNODE], PreTier[INT], IsChild[BOOL]
-func _produce_path_node_data(nodeName: String, node: PathNode, preTier = 0, isChild = false):
+func _produce_normal_path_node_data(nodeName: String, node: PathNode, preTier = 0, isChild = false):
 	var standard_node_data = {
 		"name": nodeName,
 		"tier": preTier * -1,
@@ -105,4 +114,36 @@ func _produce_path_node_data(nodeName: String, node: PathNode, preTier = 0, isCh
 # Souly used to repeat the function above
 # Params: Node[NODE3D/PATHNODE], PreTier[INT]
 func _parse_node_path_child(node: PathNode, pretier = 0):
-	return _produce_path_node_data(node.name, node, pretier, true )
+	return _produce_normal_path_node_data(node.name, node, pretier, true )
+
+func _produce_vent_path_node_data(NodeName: String, NodeInstance: PathNode):
+	var standard_vent_node_data = {
+		"name": NodeName,
+		"pos": {
+			"x": NodeInstance.global_position.x,
+			"z": NodeInstance.global_position.z
+		},
+		"entrance": NodeInstance,
+		"exit": null
+	}
+	
+	if NodeInstance.get_children().size() > 0:
+		var exitPath = NodeInstance.get_child(0)
+		standard_vent_node_data["exit"] = exitPath
+	else:
+		printerr(NodeName, " | Ventilation PathNode must have a Exit as a Child of the Entrance PathNode!")
+		return null
+	
+	vent_path_nodes[NodeName] = standard_vent_node_data
+
+func _produce_teleportation_path_node_data(NodeName: String, NodeInstance: PathNode):
+	var standard_tp_node_data = {
+		"name": NodeName,
+		"pos": {
+			"x": NodeInstance.global_position.x,
+			"z": NodeInstance.global_position.z
+		},
+		"to": NodeInstance,
+	}
+	
+	tp_path_nodes[NodeName] = standard_tp_node_data
