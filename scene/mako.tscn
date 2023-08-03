@@ -1,7 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cch8yak7kv5tr"]
+[gd_scene load_steps=13 format=3 uid="uid://cch8yak7kv5tr"]
 
 [ext_resource type="Script" path="res://script/mako.gd" id="1_5w3w3"]
 [ext_resource type="Script" path="res://script/UI.gd" id="2_wfdfa"]
+[ext_resource type="PackedScene" uid="uid://bk45c2ab1k1vf" path="res://assets/FYGS Camera Tablet.gltf" id="3_r3yv2"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_qnd01"]
+size = Vector3(0.1, 0.1, 0.1)
 
 [sub_resource type="Animation" id="Animation_kul37"]
 length = 0.001
@@ -38,211 +42,57 @@ tracks/2/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
-tracks/3/type = "bezier"
+tracks/3/type = "value"
 tracks/3/imported = false
 tracks/3/enabled = true
-tracks/3/path = NodePath("../FYGS Camera Tablet:rotation:x")
+tracks/3/path = NodePath("FYGS Camera Tablet:position")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
 tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(-0.189751, 0.563, -1.24677)]
 }
-tracks/4/type = "bezier"
+tracks/4/type = "value"
 tracks/4/imported = false
 tracks/4/enabled = true
-tracks/4/path = NodePath("../FYGS Camera Tablet:rotation:y")
+tracks/4/path = NodePath("FYGS Camera Tablet:rotation")
 tracks/4/interp = 1
 tracks/4/loop_wrap = true
 tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../FYGS Camera Tablet:rotation:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("../FYGS Camera Tablet:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-17.634, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("../FYGS Camera Tablet:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.25576, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("../FYGS Camera Tablet:position:z")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-19.8493, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_h24vc"]
-resource_name = "camera_close"
-length = 0.5
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../FYGS Camera Tablet:rotation:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1.51114, -0.25, 0, 0.25, 0, 0.0349066, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../FYGS Camera Tablet:rotation:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-2.96706, -0.25, 0, 0.25, 0, 0.174533, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../FYGS Camera Tablet:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(3.14159, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../FYGS Camera Tablet:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-17.7951, -0.25, 0, 0.25, 0, -17.634, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../FYGS Camera Tablet:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.79278, -0.25, 0, 0.25, 0, 1.25576, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../FYGS Camera Tablet:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-20.7634, -0.25, 0, 0.25, 0, -19.8493, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 0.181759, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_pqji6"]
 resource_name = "camera_open"
-length = 0.5
-tracks/0/type = "bezier"
+length = 0.3
+tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("../FYGS Camera Tablet:rotation:x")
+tracks/0/path = NodePath("FYGS Camera Tablet:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.0349066, -0.25, 0, 0.25, 0, -1.51114, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(-0.19, 0.563, -1.247), Vector3(0, 1.217, -0.19)]
 }
-tracks/1/type = "bezier"
+tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("../FYGS Camera Tablet:rotation:y")
+tracks/1/path = NodePath("FYGS Camera Tablet:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0.174533, -0.25, 0, 0.25, 0, -2.96706, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../FYGS Camera Tablet:rotation:z")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 3.14159, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../FYGS Camera Tablet:position:x")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-17.634, -0.25, 0, 0.25, 0, -17.7951, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../FYGS Camera Tablet:position:y")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1.25576, -0.25, 0, 0.25, 0, 1.79278, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../FYGS Camera Tablet:position:z")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-19.8493, -0.25, 0, 0.25, 0, -20.7634, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.5)
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 0.19237, 0), Vector3(1.5708, 0.21574, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_d22c5"]
@@ -396,7 +246,6 @@ tracks/2/keys = {
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s53c6"]
 _data = {
 "RESET": SubResource("Animation_kul37"),
-"camera_close": SubResource("Animation_h24vc"),
 "camera_open": SubResource("Animation_pqji6"),
 "enter_sleep": SubResource("Animation_d22c5"),
 "exit_sleep": SubResource("Animation_hh8nb"),
@@ -412,9 +261,12 @@ transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -17.84
 script = ExtResource("1_5w3w3")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.984808, 0.00606024, 0.173542, 0, 0.999391, -0.0348995, -0.173648, 0.0343693, 0.984208, 0, 1.15422, 0)
+transform = Transform3D(0.984808, 0.00606024, 0.173542, 0, 0.999391, -0.0348995, -0.173648, 0.0343693, 0.984208, 0, 1.154, 0)
 current = true
 fov = 59.0
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Camera3D"]
+mesh = SubResource("BoxMesh_qnd01")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
@@ -422,7 +274,7 @@ libraries = {
 }
 
 [node name="flashlight" type="SpotLight3D" parent="."]
-transform = Transform3D(0.000558452, 0, 1, 0, 1, 0, -1, 0, 0.000558452, -0.272547, 0.673496, -0.184023)
+transform = Transform3D(0.000558452, 0, 1, 0, 1, 0, -1, 0, 0.000558452, -0.661411, 0.910812, -0.0237274)
 visible = false
 light_energy = 2.0
 shadow_enabled = true
@@ -535,3 +387,6 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(1, 1, 1, 0.054902)
 metadata/_edit_use_anchors_ = true
+
+[node name="FYGS Camera Tablet" parent="." instance=ExtResource("3_r3yv2")]
+transform = Transform3D(0.983527, 0, 0.180759, 0, 1, 0, -0.180759, 0, 0.983527, -0.189751, 0.563, -1.24677)

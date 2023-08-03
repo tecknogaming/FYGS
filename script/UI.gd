@@ -126,7 +126,7 @@ func _area_top_trigger():
 			area_top.visible = false
 			area_left.visible = false
 			area_right.visible = false
-			animPlayer.play("camera_close")
+			animPlayer.play_backwards("camera_open")
 			await animPlayer.animation_finished
 			current_facing = FacingDirections.Forward
 			area_bottom_1.visible = true
